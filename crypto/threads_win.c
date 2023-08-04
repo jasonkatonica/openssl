@@ -70,13 +70,13 @@ CRYPTO_RWLOCK *CRYPTO_THREAD_lock_new(void)
 
 __owur int CRYPTO_THREAD_read_lock(CRYPTO_RWLOCK *lock)
 {
-# ifdef USE_RWLOCK
-    CRYPTO_win_rwlock *rwlock = lock;
-
-    AcquireSRWLockShared(&rwlock->lock);
-# else
-    EnterCriticalSection(lock);
-# endif
+//# ifdef USE_RWLOCK
+//    CRYPTO_win_rwlock *rwlock = lock;
+//
+//    AcquireSRWLockShared(&rwlock->lock);
+//# else
+//    EnterCriticalSection(lock);
+//# endif
     return 1;
 }
 
@@ -95,18 +95,18 @@ __owur int CRYPTO_THREAD_write_lock(CRYPTO_RWLOCK *lock)
 
 int CRYPTO_THREAD_unlock(CRYPTO_RWLOCK *lock)
 {
-# ifdef USE_RWLOCK
-    CRYPTO_win_rwlock *rwlock = lock;
-
-    if (rwlock->exclusive) {
-        rwlock->exclusive = 0;
-        ReleaseSRWLockExclusive(&rwlock->lock);
-    } else {
-        ReleaseSRWLockShared(&rwlock->lock);
-    }
-# else
-    LeaveCriticalSection(lock);
-# endif
+//# ifdef USE_RWLOCK
+//    CRYPTO_win_rwlock *rwlock = lock;
+//
+//    if (rwlock->exclusive) {
+//        rwlock->exclusive = 0;
+//        ReleaseSRWLockExclusive(&rwlock->lock);
+//    } else {
+//        ReleaseSRWLockShared(&rwlock->lock);
+//    }
+//# else
+//    LeaveCriticalSection(lock);
+//# endif
     return 1;
 }
 
