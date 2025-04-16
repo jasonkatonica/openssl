@@ -599,7 +599,6 @@ our %disabled = ( # "what"         => "comment"
                   "ec_nistp_64_gcc_128" => "default",
                   "egd"                 => "default",
                   "external-tests"      => "default",
-                  "tests"               => "default",
                   "fuzz-afl"            => "default",
                   "fuzz-libfuzzer"      => "default",
                   "pie"                 => "default",
