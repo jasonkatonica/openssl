@@ -472,6 +472,7 @@ SHA3_absorb:
 .size	SHA3_absorb,.-SHA3_absorb
 ___
 }
+# Changed as per nasm requirement mentioned at https://github.com/openssl/openssl/issues/25774
 { my ($A_flat,$out,$len,$bsz) = map("%r$_",(2..5));
 
 $code.=<<___;
