@@ -7,6 +7,9 @@
  * https://www.openssl.org/source/license.html
  */
 
+/*
+ Changes made to this file temporarily based upon https://github.com/openssl/openssl/issues/23980
+ */
 #include "internal/json_enc.h"
 #include "internal/nelem.h"
 #include "internal/numbers.h"
