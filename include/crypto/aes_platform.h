@@ -189,7 +189,7 @@ void gcm_ghash_v8(uint64_t Xi[2], const u128 Htable[16], const uint8_t *inp, siz
     && ((defined(__GNUC__) && !defined(__clang__) && (__GNUC__ >= 8))                  \
         || (defined(__clang__) && (__clang_major__ >= 7))                              \
         || (defined(_MSC_VER) && (_MSC_VER >= 1927)))
-#define VAES_CBC_ELIGIBLE 1
+#define VAES_CBC_ELIGIBLE 0
 #else
 #define VAES_CBC_ELIGIBLE 0
 #endif
